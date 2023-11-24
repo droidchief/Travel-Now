@@ -1,6 +1,7 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:travel_now/ui/home/home_screen.dart';
+import 'package:travel_now/screens/home/home_screen.dart';
+import 'package:travel_now/utils/app_styles.dart';
 
 class BottomBar extends StatefulWidget {
   const BottomBar({super.key});
@@ -38,8 +39,8 @@ class _BottomBarState extends State<BottomBar> {
         elevation: 10,
         showSelectedLabels: false,
         showUnselectedLabels: false,
-        selectedItemColor: Colors.blueGrey,
-        unselectedItemColor: const Color(0xFF526480),
+        selectedItemColor: Styles.primaryColor,
+        unselectedItemColor: Colors.blueGrey,
         items: const [
         BottomNavigationBarItem(icon: Icon(
             FluentSystemIcons.ic_fluent_duo_home_lock_regular
