@@ -1,7 +1,9 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:travel_now/screens/hotel_view.dart';
 import 'package:travel_now/screens/ticket_view.dart';
 import 'package:travel_now/utils/app_styles.dart';
+import 'package:travel_now/utils/hotel_info_list.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -62,10 +64,10 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     Text("Upcoming Travel ", style: Styles.headLineStyle2,),
                     InkWell(
-                      onTap: (){
-                        print("View all was tapped");
+                      onTap: () {
+                        print("View all upcoming travel");
                       },
-                      child: Text("View all", style: Styles.headLineStyle4.copyWith(color: Styles.primaryColor),)
+                      child: Text("View all", style: Styles.headLineStyle4.copyWith(color: Styles.primaryColor))
                     ),
                   ],
                 ),
@@ -82,6 +84,30 @@ class HomeScreen extends StatelessWidget {
                 TicketView(),
                 TicketView()
               ],
+            ),
+          ),
+          const SizedBox(height: 40),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("Hotels", style: Styles.headLineStyle2),
+                InkWell(
+                  onTap: () {
+                    print("View all hotels");
+                  },
+                    child: Text("View all", style: Styles.headLineStyle4.copyWith(color: Styles.primaryColor))
+                )
+              ],
+            )
+            ,
+          ),
+          const SizedBox(height: 15),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: hotelList.map((singleHotel) => HotelView(hotel: singleHotel)).toList()
             ),
           )
         ],
