@@ -11,10 +11,10 @@ class HotelView extends StatelessWidget {
     final size = AppLayout.getSize(context);
     return Container(
       width: size.width*0.85,
-      height: 350,
+      height: AppLayout.getHeight(350),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(AppLayout.getHeight(15)),
         boxShadow: [
             BoxShadow(
                 color: Colors.grey.shade200,
@@ -23,14 +23,14 @@ class HotelView extends StatelessWidget {
             )
           ],
       ),
-      margin: const EdgeInsets.only(left: 16),
+      margin: EdgeInsets.only(left: AppLayout.getHeight(16)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            height: 200,
+            height: AppLayout.getHeight(200),
             decoration: BoxDecoration(
-                borderRadius: const BorderRadius.only(topLeft: Radius.circular(15), topRight: Radius.circular(15)),
+                borderRadius: BorderRadius.only(topLeft: Radius.circular(AppLayout.getHeight(15)), topRight: Radius.circular(AppLayout.getHeight(15))),
                 image: DecorationImage(
                     fit: BoxFit.cover,
                     image: AssetImage(
@@ -39,18 +39,18 @@ class HotelView extends StatelessWidget {
                 )
             ),
           ),
-          const SizedBox(height: 15),
+          SizedBox(height: AppLayout.getHeight(15)),
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
+            padding: EdgeInsets.symmetric(horizontal: AppLayout.getHeight(16)),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(hotel['place'], style: Styles.headLineStyle2),
-                const SizedBox(height: 8),
+                SizedBox(height: AppLayout.getHeight(8)),
                 Text(hotel['destination'], style: Styles.headLineStyle4),
-                const SizedBox(height: 8),
+                SizedBox(height: AppLayout.getHeight(8)),
                 Text("\$${hotel['price']}/night", style: Styles.headLineStyle2),
-                const SizedBox(height: 20),
+                SizedBox(height: AppLayout.getHeight(20)),
                 Text("A very calm and relaxing vacation house with", style: Styles.headLineStyle4),
               ],
             ),
