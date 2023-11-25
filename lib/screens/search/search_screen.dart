@@ -1,4 +1,3 @@
-import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:travel_now/utils/app_layout.dart';
 import 'package:travel_now/utils/app_styles.dart';
